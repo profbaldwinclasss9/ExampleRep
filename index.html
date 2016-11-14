@@ -7,8 +7,16 @@
         <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
     </head>
     <body>
+        
+<!-- Below is the scene. It is the workspace to edit the code. -->
+        
         <a-scene>
+
+<!-- The assets is where you are going to put all your tools - images, videos, objects, etc. Below there are 20 images for you twenty family photos. Images 2 through 20 are commented out. -->
+            
             <a-assets>
+                
+<!-- The twenty images below are the family photes displayed -->
                 <img id="one" src="1.jpg">
                 <img id="two" src="2.jpg">
                 <img id="three" src="3.jpg">
@@ -30,18 +38,19 @@
                 <img id="nineteen" src="19.jpg">
                 <img id="twenty" src="20.jpg">
                 
-                <!--<a-asset-item id="House" src="House.obj"></a-asset-item>
+<!-- The image below is the background. Change the src, or sources, to change the photo.
+
+TRY IT: Change "office.jpg" to "woods.jpg"
+-->
+                <img id="background" src="office.jpg">
                 
-                <a-asset-item id="House-mtl" src="House.mtl"></a-asset-item>-->
-
-
+            
             </a-assets>
             
-            <!--<a-entity obj-model="obj: #House; mtl: #House-mtl"></a-entity>-->
-            
-            <a-plane rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
-            
+<!-- Entities are the objects that are going to show up. -->
             <a-entity>
+                
+<!-- The objects that show up here are CURVED IMAGES. The sources are the images above. -->
                 <a-curvedimage src="#one" height="4.0" radius="10" theta-length="40"
                      rotation="0 0 0" position="0 -15 0" scale="3 3 3"></a-curvedimage>
                 <a-curvedimage src="#two" height="4.0" radius="10" theta-length="40"
@@ -83,11 +92,15 @@
                 <a-curvedimage src="#twenty" height="4.0" radius="10" theta-length="40"
                      rotation="0 -250 0" position="0 15 0" scale="3 3 3"></a-curvedimage>
             </a-entity>
-            
+              
+<!-- This is the camera. Will shift position from which you are viewing. Change the number 5 in position to change the height, and the 0's to different numbers and see how that changes the camera position. -->
             <a-camera position="0 5 0"><a-cursor color="#FF0000"></a-cursor></a-camera>
             
-            <!--<a-sky src="Garden2.jpg" rotation="0 0 0" segments-width="1000" theta-length="1000"
-                   ></a-sky>-->
-            <a-sky color="#A7D1F0"></a-sky>
+<!-- This is the sky. Images are turned into a globe. Will be the background. Change this by changing the source of the image in the assets.
+-->
+            <a-sky src="#background" rotation="0 0 0" segments-width="1000" theta-length="1000"></a-sky>
+            
+        </a-scene>
+            
     </body>
 </html>
